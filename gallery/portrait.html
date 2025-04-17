@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Portrait Gallery</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">Smedly Moise</div>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <ul class="nav-links" id="navMenu">
+      <li><a href="../index.html#home">Home</a></li>
+      <li><a href="../portfolio.html">Portfolio</a></li>
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+  
+
+  <!-- Gallery -->
+  <section class="portfolio">
+    <h2 class="portfolio-heading">Portrait</h2>
+    <div class="gallery-grid">
+      <div class="item"><img src="../portrait/20180517040706_IMG_1429-1.jpg" class="box" alt="Portrait 1"></div>
+      <div class="item"><img src="../portrait/20180602013440_IMG_2544.jpg" class="box" alt="Portrait 2"></div>
+      <div class="item"><img src="../portrait/20180915060205_IMG_4035.jpg" class="box" alt="Portrait 3"></div>
+      <div class="item"><img src="../portrait/IMG_2539 (2).jpg" class="box" alt="Portrait 4"></div>
+      <div class="item"><img src="../portrait/IMG_20240923_111835.jpg" class="box" alt="Portrait 5"></div>
+      <div class="item"><img src="../portrait/MO701456.jpg" class="box" alt="Portrait 6"></div>
+      <div class="item"><img src="../portrait/MO701601.JPG" class="box" alt="Portrait 7"></div>
+      <div class="item"><img src="../portrait/MO702470.jpg" class="box" alt="Portrait 8"></div>
+      <div class="item"><img src="../portrait/MO702491.jpg" class="box" alt="Portrait 9"></div>
+      <div class="item"><img src="../portrait/MO702531.jpg" class="box" alt="Portrait 10"></div>
+      <div class="item"><img src="../portrait/MO702571-2.jpg" class="box" alt="Portrait 11"></div>
+      <div class="item"><img src="../portrait/MO702586.jpg" class="box" alt="Portrait 12"></div>
+      <div class="item"><img src="../portrait/MO702617.jpg" class="box" alt="Portrait 13"></div>
+    </div>
+  </section>
+  
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      document.querySelectorAll(".gallery-grid").forEach(gallery => {
+        const items = Array.from(gallery.children);
+        for (let i = items.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [items[i], items[j]] = [items[j], items[i]];
+        }
+        items.forEach(item => gallery.appendChild(item));
+      });
+    });
+  </script>
+
+<script>
+  function toggleMenu() {
+    document.getElementById("navMenu").classList.toggle("open");
+  }
+</script>
+
+  
+</body>
+</html>

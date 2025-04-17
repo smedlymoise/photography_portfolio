@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sport Gallery</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">Smedly Moise</div>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <ul class="nav-links" id="navMenu">
+      <li><a href="../index.html#home">Home</a></li>
+      <li><a href="../portfolio.html">Portfolio</a></li>
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+  
+  
+
+  <!-- Gallery -->
+  <section class="portfolio">
+    <h2 class="portfolio-heading">Product</h2>
+    <div class="gallery-grid">
+      <div class="item"><img src="../product/_43A7644.jpg" class="box" alt="Product 1"></div>
+      <div class="item"><img src="../product/_43A7647.jpg" class="box" alt="Product 2"></div>
+      <div class="item"><img src="../product/_43A7650.jpg" class="box" alt="Product 3"></div>
+      <div class="item"><img src="../product/_43A7651.jpg" class="box" alt="Product 4"></div>
+      <div class="item"><img src="../product/_43A7657.jpg" class="box" alt="Product 5"></div>
+      <div class="item"><img src="../product/_43A7661.jpg" class="box" alt="Product 6"></div>
+      <div class="item"><img src="../product/_43A7669.jpg" class="box" alt="Product 7"></div>
+      <div class="item"><img src="../product/_43A7682.jpg" class="box" alt="Product 8"></div>
+      <div class="item"><img src="../product/IMG_7776.jpg" class="box" alt="Product 9"></div>
+      <div class="item"><img src="../product/IMG_7793.jpg" class="box" alt="Product 10"></div>
+    </div>
+  </section>
+  
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      document.querySelectorAll(".gallery-grid").forEach(gallery => {
+        const items = Array.from(gallery.children);
+        for (let i = items.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [items[i], items[j]] = [items[j], items[i]];
+        }
+        items.forEach(item => gallery.appendChild(item));
+      });
+    });
+  </script>
+
+<script>
+  function toggleMenu() {
+    document.getElementById("navMenu").classList.toggle("open");
+  }
+</script>
+
+  
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Photgraphy Portfolio</title>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">Smedly Moise</div>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <ul class="nav-links" id="navMenu">
+      <li><a href="#home">Home</a></li>
+      <li><a href="./portfolio.html">Portfolio</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+  
+
+    <section class="hero" id="home">
+        <div class="picture-placeholder">
+          <img src="background/_43A3537.jpg" alt="picture">
+        </div>
+        <a href="portfolio.html" class="portfolio-button">Portfolio</a>
+      </section>
+
+    <hr>
+    
+    <section class="about-section" id="about">
+        <div class="section-container">
+          <div class="about">
+            <div class="about-left"> 
+                <img src="background/IMG_20250212_072812_643.webp" alt="Self" class="about-image">
+              </div>
+              <div class="aboiut-right">
+              <p>
+                I'm a New York City based photographer, specializing in capturing real moments through street, portrait, wedding, and travel photography. With an eye for storytelling and detail, my work blends urban energy with personal expression. Whether it’s a bustling Brooklyn street or an intimate wedding moment, I aim to create timeless visuals that connect.
+              </p>
+            </div>
+          </div>
+        </div>
+        <hr>
+      </section>
+
+      <section class="social-media">
+        <div class="section-container">
+          <div class="social-wrapper">
+            <div class="social-text">
+              <p>Want to see more behind-the-scenes shots and everyday moments?  
+              Follow me on Instagram for fresh uploads, story highlights, and full gallery drops.</p>
+              <a href="https://www.instagram.com/moise.photos/" target="_blank" class="insta-link">@moise.photos</a>
+            </div>
+            <div class="social-grid">
+              <div class="icon"><img src="./portrait/MO702531.jpg" alt="Portrait" /></div>
+              <div class="icon"><img src="./architecture/20230402183853_IMG_7682.jpg" alt="Architecture" /></div>
+              <div class="icon"><img src="./Street/MO702640.jpg" alt="Street" /></div>
+              <div class="icon"><img src="./product/_43A7657.jpg" alt="Product" /></div>
+              <div class="icon"><img src="./travel/FB_IMG_1707255559414.jpg" alt="Travel" /></div>
+              <div class="icon"><img src="./event/143A8728.jpg" alt="Event" /></div>
+              <div class="icon"><img src="./portrait/MO702586.jpg" alt="Portrait 2" /></div>
+              <div class="icon"><img src="./architecture/MO702390 (1).jpg" alt="Architecture 2" /></div>
+              <div class="icon"><img src="./travel/20250227_153810.jpg" alt="Travel 2" /></div>
+            </div>
+          </div>
+        </div>
+        <hr>
+      </section>
+
+      <section id="contact">
+  
+      
+        <form id="contact-form" class="contact-form">
+          <input type="text" name="from_name" placeholder="Your name" required>
+          <input type="email" name="from_email" placeholder="Your Email" required>
+          <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+          <button type="submit">Send</button>
+        </form>
+      </section>
+      
+      
+  
+
+    <script>
+      function toggleMenu() {
+        document.getElementById("navMenu").classList.toggle("open");
+      }
+    </script>
+
+<!-- EmailJS CDN -->
+<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  (function () {
+    emailjs.init("t1AcAA6MQFdXbfYyk"); 
+  })();
+
+  document.getElementById("contact-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+    emailjs.sendForm("service_z18r2pk", "template_n1z8atu", this)
+      .then(function () {
+        alert("✅ Message sent successfully!");
+        e.target.reset();
+      }, function (error) {
+        alert("❌ Failed to send message. Error: " + JSON.stringify(error));
+      });
+  });
+</script>
+
+
+
+
+    
+</body>
+</html>

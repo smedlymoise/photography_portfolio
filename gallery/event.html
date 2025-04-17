@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Wedding Gallery</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">Smedly Moise</div>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <ul class="nav-links" id="navMenu">
+      <li><a href="../index.html#home">Home</a></li>
+      <li><a href="../portfolio.html">Portfolio</a></li>
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+  
+
+
+  <!-- Gallery -->
+  <section class="portfolio">
+    <h2 class="portfolio-heading">Event</h2>
+    <div class="gallery-grid">
+      <div class="item"><img src="../event/143A8334.jpg" class="box" alt="Event 1"></div>
+      <div class="item"><img src="../event/143A8710.jpg" class="box" alt="Event 2"></div>
+      <div class="item"><img src="../event/143A8728.jpg" class="box" alt="Event 3"></div>
+      <div class="item"><img src="../event/143A8742.jpg" class="box" alt="Event 4"></div>
+      <div class="item"><img src="../event/143A8895.jpg" class="box" alt="Event 5"></div>
+      <div class="item"><img src="../event/MO700515.jpg" class="box" alt="Event 6"></div>
+      <div class="item"><img src="../event/MO700539.jpg" class="box" alt="Event 7"></div>
+      <div class="item"><img src="../event/MO700586.jpg" class="box" alt="Event 8"></div>
+      <div class="item"><img src="../event/MO700596.jpg" class="box" alt="Event 9"></div>
+      <div class="item"><img src="../event/MO700619.jpg" class="box" alt="Event 10"></div>
+      <div class="item"><img src="../event/MO700621.jpg" class="box" alt="Event 11"></div>
+      <div class="item"><img src="../event/MO703087.jpg" class="box" alt="Event 12"></div>
+      <div class="item"><img src="../event/MO703089.jpg" class="box" alt="Event 13"></div>
+      <div class="item"><img src="../event/MO703090.jpg" class="box" alt="Event 14"></div>
+      <div class="item"><img src="../event/MO703134.jpg" class="box" alt="Event 15"></div>
+      <div class="item"><img src="../event/MO703138.jpg" class="box" alt="Event 16"></div>
+      <div class="item"><img src="../event/MO703425.jpg" class="box" alt="Event 17"></div>
+      <div class="item"><img src="../event/MO703651.jpg" class="box" alt="Event 18"></div>
+      <div class="item"><img src="../event/MO703738.jpg" class="box" alt="Event 19"></div>
+      <div class="item"><img src="../event/MO703743.jpg" class="box" alt="Event 20"></div>
+      <div class="item"><img src="../event/MO703775.jpg" class="box" alt="Event 21"></div>
+      <div class="item"><img src="../event/MO703814.jpg" class="box" alt="Event 22"></div>
+      <div class="item"><img src="../event/MO703815.jpg" class="box" alt="Event 23"></div>
+      <div class="item"><img src="../event/MO703819.jpg" class="box" alt="Event 24"></div>
+      <div class="item"><img src="../event/MO703915.jpg" class="box" alt="Event 25"></div>
+      <div class="item"><img src="../event/MO704048.jpg" class="box" alt="Event 26"></div>
+    </div>
+  </section>
+  
+
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      document.querySelectorAll(".gallery-grid").forEach(gallery => {
+        const items = Array.from(gallery.children);
+        for (let i = items.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [items[i], items[j]] = [items[j], items[i]];
+        }
+        items.forEach(item => gallery.appendChild(item));
+      });
+    });
+  </script>
+
+<script>
+  function toggleMenu() {
+    document.getElementById("navMenu").classList.toggle("open");
+  }
+</script>
+
+  
+
+</body>
+</html>
