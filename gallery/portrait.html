@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <title>Portrait Gallery</title>
   <link rel="stylesheet" href="../styles.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
 </head>
 <body>
 
@@ -42,24 +44,30 @@
   
 
 
+  <!-- Swiper Modal -->
+  <div class="swiper-modal" id="swiperModal">
+    <div class="swiper">
+      <div class="swiper-wrapper" id="swiperWrapper"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <span class="close-modal" onclick="closeModal()">×</span>
+    </div>
+  </div>
+
+  
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      document.querySelectorAll(".gallery-grid").forEach(gallery => {
-        const items = Array.from(gallery.children);
-        for (let i = items.length - 1; i > 0; i--) {
-          const j = Math.floor(Math.random() * (i + 1));
-          [items[i], items[j]] = [items[j], items[i]];
-        }
-        items.forEach(item => gallery.appendChild(item));
-      });
-    });
+    function toggleMenu() {
+      document.getElementById("navMenu").classList.toggle("open");
+    }
   </script>
 
-<script>
-  function toggleMenu() {
-    document.getElementById("navMenu").classList.toggle("open");
-  }
-</script>
+  
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Your Gallery Script -->
+  <script src="gallery.js"></script>
 
   
 </body>
