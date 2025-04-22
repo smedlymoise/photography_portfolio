@@ -361,27 +361,6 @@ hr {
   text-align: center;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .placeholder {
-    height: 200px;
-  }
-
-  .placeholder h2 {
-    font-size: 1.4rem;
-    padding: 0.4rem 1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .placeholder {
-    height: 160px;
-  }
-
-  .placeholder h2 {
-    font-size: 1.2rem;
-  }
-}
 
 
 /* Gallery Grid */
@@ -515,7 +494,13 @@ html {
 
 
 /* Responsive Layout */
+
+/* Tablets & Small Desktops */
 @media (max-width: 1024px) {
+  body {
+    background-color: #121212;
+  }
+
   .portfolio-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -525,13 +510,22 @@ html {
   }
 }
 
+/* Tablets & Larger Phones */
 @media (max-width: 768px) {
+  body {
+    background-color: #121212;
+  }
+
   .about {
     flex-direction: column;
   }
 
   .portfolio-grid {
     grid-template-columns: 1fr;
+  }
+
+  .gallery-grid {
+    column-count: 1;
   }
 
   .social-wrapper {
@@ -553,8 +547,8 @@ html {
     width: 160px;
     padding: 10px;
     border-radius: 5px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    z-index: 1001; /* Add this */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1001;
   }
 
   .nav-links.open {
@@ -563,16 +557,41 @@ html {
 
   .hamburger {
     display: block;
-    z-index: 1002; /* Optional for safety */
+    z-index: 1002;
   }
-}
 
-@media (max-width: 600px) {
-  .portfolio-grid .box {
+  .placeholder {
     height: 200px;
   }
 
-  .gallery-grid {
-    column-count: 1;
+  .placeholder h2 {
+    font-size: 1.4rem;
+    padding: 0.4rem 1rem;
+  }
+}
+
+/* Small Phones */
+@media (max-width: 600px) {
+  body {
+    background-color: #121212;
+  }
+
+  .portfolio-grid .box {
+    height: 200px;
+  }
+}
+
+/* Extra Small Phones */
+@media (max-width: 480px) {
+  body {
+    background-color: #121212;
+  }
+
+  .placeholder {
+    height: 160px;
+  }
+
+  .placeholder h2 {
+    font-size: 1.2rem;
   }
 }
